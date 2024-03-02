@@ -1,0 +1,232 @@
+:root{
+
+--clr-moderate: hsl(263, 55%, 52%);
+--clr-grayish-blue : hsl(217, 19%, 35%);
+--clr-blackish-blue : hsl(219, 29%, 14%);
+--clr-white: hsl(0, 0%, 100%);
+--clr-light-gray: hsl(0, 0%, 81%);
+--clr-light-grayish-blue: hsl(210, 46%, 95%);
+
+--fs-large: 1.6rem;
+--fs-name: 1.4rem;
+--fs-title: 1rem;
+--fs-paragraph: 1.1rem;
+
+}
+
+html{
+    font-size: 62.5%;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    background-color: var(--clr-light-grayish-blue);
+}
+
+*,
+::before,
+::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main{
+    display: grid;
+    grid-template-rows: repeat(auto-fill, 1fr);
+    padding: 2rem;
+    max-width: 400px;
+    gap: 2rem;
+    margin: 0 auto;
+}
+
+section{
+    padding: 2rem;
+    display: grid;
+    border-radius: 0.7rem;
+    height: auto;
+    box-shadow: 0 0 20px var(--clr-light-gray);
+    
+}
+
+.name{
+    font-size: var(--fs-name);
+}
+
+.title{
+    font-size: var(--fs-title);
+}
+
+.explanation{
+    font-size: var(--fs-large);
+}
+
+.paragraph{
+    font-size: var(--fs-paragraph);
+    line-height: 1.9rem;
+    letter-spacing: 0.1px;
+}
+
+.photo{
+    width: 2.8rem;
+    height: 2.8rem;
+    border-radius: 50%;
+    background-position: center;
+    background-size: cover;
+    box-shadow: 0px 0px 1px 3px var(--clr-light-gray);
+}
+
+.header {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+article{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem
+}
+
+#clifford{
+    background-color: var(--clr-moderate);
+    position: relative;
+}
+
+#clifford::before{
+    content: '“';
+    font-size: 42rem;
+    font-family:Arial, Helvetica, sans-serif;
+    color: var(--clr-light-gray);
+    opacity: 0.6;
+    position: absolute;
+    top:-8.1rem;
+    left: 15rem;
+}
+
+#clifford .name,
+#clifford .explanation{
+    color: var(--clr-light-grayish-blue);
+    z-index: 1;
+}
+
+#clifford .title,
+#clifford .paragraph{
+    color: var(--clr-light-gray);
+}
+
+#walters{
+    background-color: var(--clr-grayish-blue);
+}
+
+#walters .name,
+#walters .explanation{
+    color: var(--clr-light-grayish-blue);
+}
+
+#walters .title,
+#walters .paragraph{
+    color: var(--clr-light-gray);
+}
+
+#harmon{
+    background-color: var(--clr-white);
+}
+
+#harmon .name,
+#harmon .explanation{
+    color: var(--clr-blackish-blue);
+}
+
+#harmon .title,
+#harmon .paragraph{
+    color: var(--clr-grayish-blue);
+}
+
+#abrams{
+    background-color: var(--clr-blackish-blue);
+}
+
+#abrams .name,
+#abrams .explanation{
+    color: var(--clr-white);
+}
+
+#abrams .title,
+#abrams .paragraph{
+    color: var(--clr-light-gray);
+}
+
+#whittle{
+    background-color: var(--clr-white);
+}
+
+#whittle .name,
+#whittle .explanation{
+    color: var(--clr-blackish-blue);
+}
+
+#whittle .title,
+#whittle .paragraph{
+    color: var(--clr-grayish-blue);
+}
+
+#clifford .photo{
+    background-image: url(./images/image-daniel.jpg);
+}
+
+#walters .photo{
+    background-image: url(./images/image-jonathan.jpg);
+}
+
+#harmon .photo{
+    background-image: url(./images/image-jeanette.jpg);
+}
+
+#abrams .photo{
+    background-image: url(./images/image-patrick.jpg);
+}
+
+#whittle .photo{
+    background-image: url(./images/image-kira.jpg);
+}
+
+@media only screen and (min-width: 1200px){
+    main{
+        display: grid;
+        grid-auto-flow: column;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        padding: 2rem;
+        gap: 2rem;
+        min-width: 50%;
+        margin-top: 20rem;
+        align-self: center;
+    }
+
+    section{
+        
+    }
+    
+    #clifford{
+        grid-area: 1/1/2/3;
+    }
+
+    #harmon{
+        grid-area: 2/1/3/2;
+    }
+
+    #walters{
+        grid-area: 1/3/2/4;
+    }
+
+    #abrams{
+        grid-area: 2/2/3/4;
+    }
+
+    #whittle{
+        grid-area: 1/4/-1/-1;
+    }
+
+    #clifford::before{
+        position: absolute;
+        top:-8.1rem;
+    }
+}
